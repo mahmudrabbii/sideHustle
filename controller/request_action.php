@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if ($request_id <= 0 || !in_array($action, ['accept', 'decline'])) {
         $_SESSION['error_message'] = "Invalid request.";
-        header("Location: /side/view/professional_dashboard.php");
+        header("Location: /sideHustle/view/professional_dashboard.php");
         exit();
     }
    
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if (!$prof_data) {
         $_SESSION['error_message'] = "Professional profile not found.";
-        header("Location: /side/view/professional_dashboard.php");
+        header("Location: /sideHustle/view/professional_dashboard.php");
         exit();
     }
     
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if (mysqli_num_rows($verify_result) === 0) {
         $_SESSION['error_message'] = "Unauthorized access.";
-        header("Location: /side/view/professional_dashboard.php");
+        header("Location: /sideHustle/view/professional_dashboard.php");
         exit();
     }
     
@@ -68,11 +68,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     mysqli_stmt_close($update_stmt);
     mysqli_close($conn);
     
-    header("Location: /side/view/professional_dashboard.php");
+    header("Location: /sideHustle/view/professional_dashboard.php");
     exit();
     
 } else {
-    header("Location: /side/view/professional_dashboard.php");
+    header("Location: /sideHustle/view/professional_dashboard.php");
     exit();
 }
 ?>

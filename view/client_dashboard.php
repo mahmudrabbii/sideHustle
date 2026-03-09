@@ -19,7 +19,7 @@ mysqli_stmt_close($stmt);
 
 if (!$current_client) {
     $_SESSION['error_message'] = "Client profile not found.";
-    header("Location: /side/view/login.php");
+    header("Location: /sideHustle/view/login.php");
     exit();
 }
 

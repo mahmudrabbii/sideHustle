@@ -101,12 +101,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             // Set success message
             $_SESSION['register_success'] = "Registration successful! Please login.";
-            header("Location: /side/view/login.php");
+            header("Location: /sideHustle/view/login.php");
             exit();
             
         } else {
             $_SESSION['register_error'] = "Registration failed. Please try again.";
-            header("Location: /side/view/register.php");
+            header("Location: /sideHustle/view/register.php");
             exit();
         }
         
@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Store errors in session
         $_SESSION['register_error'] = implode("<br>", $errors);
-        header("Location: /side/view/register.php");
+        header("Location: /sideHustle/view/register.php");
         exit();
     }
     
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 } else {
     // If not POST request, redirect to register page
-    header("Location: /side/view/register.php");
+    header("Location: /sideHustle/view/register.php");
     exit();
 }
 ?>

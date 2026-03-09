@@ -5,12 +5,12 @@ require_once '../model/db_connect.php';
 require_login();
 
 if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'client') {
-    header("Location: /side/view/login.php");
+    header("Location: /sideHustle/view/login.php");
     exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: /side/view/client_dashboard.php");
+    header("Location: /sideHustle/view/client_dashboard.php");
     exit();
 }
 
@@ -20,7 +20,7 @@ $request_description = isset($_POST['request_description']) ? clean_input($_POST
 
 if ($professional_id <= 0 || empty($service_type) || empty($request_description)) {
     $_SESSION['error_message'] = 'Please fill all request fields.';
-    header("Location: /side/view/client_dashboard.php");
+    header("Location: /sideHustle/view/client_dashboard.php");
     exit();
 }
 
@@ -34,7 +34,7 @@ mysqli_stmt_close($stmt);
 
 if (!$client) {
     $_SESSION['error_message'] = 'Client profile not found.';
-    header("Location: /side/view/client_dashboard.php");
+    header("Location: /sideHustle/view/client_dashboard.php");
     exit();
 }
 
@@ -48,7 +48,7 @@ mysqli_stmt_close($stmt);
 
 if (!$professional) {
     $_SESSION['error_message'] = 'Professional not found.';
-    header("Location: /side/view/client_dashboard.php");
+    header("Location: /sideHustle/view/client_dashboard.php");
     exit();
 }
 
@@ -73,6 +73,6 @@ if (mysqli_stmt_execute($stmt)) {
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
 
-header("Location: /side/view/client_dashboard.php");
+header("Location: /sideHustle/view/client_dashboard.php");
 exit();
 ?>

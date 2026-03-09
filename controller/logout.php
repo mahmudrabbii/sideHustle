@@ -8,6 +8,6 @@ require_once '../config.php';
 session_destroy();
 
 // Redirect to login page
-header("Location: /side/view/login.php");
+header("Location: /sideHustle/view/login.php");
 exit();
 ?>

@@ -44,21 +44,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 
                 if ($user['user_type'] === 'professional') {
-                    header("Location: /side/view/professional_dashboard.php");
+                    header("Location: /sideHustle/view/professional_dashboard.php");
                 } else {
-                    header("Location: /side/view/client_dashboard.php");
+                    header("Location: /sideHustle/view/client_dashboard.php");
                 }
                 exit();
                 
             } else {
                 $_SESSION['login_error'] = "Invalid email or password";
-                header("Location: /side/view/login.php");
+                header("Location: /sideHustle/view/login.php");
                 exit();
             }
             
         } else {
             $_SESSION['login_error'] = "Invalid email or password";
-            header("Location: /side/view/login.php");
+            header("Location: /sideHustle/view/login.php");
             exit();
         }
         
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         
         $_SESSION['login_error'] = implode("<br>", $errors);
-        header("Location: /side/view/login.php");
+        header("Location: /sideHustle/view/login.php");
         exit();
     }
     
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 } else {
     
-    header("Location: /side/view/login.php");
+    header("Location: /sideHustle/view/login.php");
     exit();
 }
 ?>

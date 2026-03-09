@@ -4,7 +4,7 @@ require_once '../model/db_connect.php';
 require_login();
 
 if ($_SESSION['user_type'] !== 'professional') {
-    header("Location: /side/view/dashboard.php");
+    header("Location: /sideHustle/view/dashboard.php");
     exit();
 }
 

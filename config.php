@@ -10,7 +10,7 @@ function is_logged_in() {
 
 function require_login() {
     if (!isset($_SESSION['user_id'])) {
-        header("Location: /side/view/login.php");
+        header("Location: /sideHustle/view/login.php");
         exit();
     }
 }
@@ -19,9 +19,9 @@ function require_login() {
 function redirect_if_logged_in() {
     if (isset($_SESSION['user_id'])) {
         if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'professional') {
-            header("Location: /side/view/professional_dashboard.php");
+            header("Location: /sideHustle/view/professional_dashboard.php");
         } else {
-            header("Location: /side/view/client_dashboard.php");
+            header("Location: /sideHustle/view/client_dashboard.php");
         }
         exit();
     }
