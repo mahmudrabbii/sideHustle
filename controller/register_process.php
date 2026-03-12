@@ -37,7 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($password != $confirm_password) {
         $errors[] = "Passwords do not match";
+    
     }
+
+     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
     if (empty($phone)) {
         $errors[] = "Phone number is required";
@@ -67,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insert into users table
         $insert_user_query = "INSERT INTO users (email, password, full_name, user_type) VALUES (?, ?, ?, ?)";
         $stmt = mysqli_prepare($conn, $insert_user_query);
-        mysqli_stmt_bind_param($stmt, "ssss", $email, $password, $full_name, $user_type);
+        mysqli_stmt_bind_param($stmt, "ssss", $email, $hashedPassword, $full_name, $user_type);
         
         if (mysqli_stmt_execute($stmt)) {
             $user_id = mysqli_insert_id($conn);
