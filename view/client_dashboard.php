@@ -4,7 +4,7 @@ require_once '../model/db_connect.php';
 require_login();
 
 if ($_SESSION['user_type'] !== 'client') {
-    header("Location: /side/view/professional_dashboard.php");
+    header("Location: /sideHustle/view/professional_dashboard.php");
     exit();
 }
 
@@ -93,7 +93,7 @@ mysqli_close($conn);
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Dashboard - Side Hustle</title>
+<title>Client Dashboard - sideHustle Hustle</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:Arial,sans-serif;background:#f5f7fa;min-height:100vh;}
@@ -103,12 +103,12 @@ body{font-family:Arial,sans-serif;background:#f5f7fa;min-height:100vh;}
 .logout-btn{background:rgba(255,255,255,0.2);padding:8px 18px;border-radius:5px;border:1px solid #fff;color:#fff;text-decoration:none;}
 .logout-btn:hover{background:#fff;color:#667eea;}
 .dashboard{display:grid;grid-template-columns:240px 1fr;gap:25px;max-width:1250px;margin:40px auto;padding:0 20px;}
-.sidebar{background:#fff;padding:25px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);height:fit-content;}
-.sidebar h3{margin-bottom:15px;color:#667eea;}
-.sidebar ul{list-style:none;}
-.sidebar li{margin-bottom:10px;}
-.sidebar a{display:block;padding:10px;background:#f5f7fa;border-radius:5px;text-decoration:none;color:#333;}
-.sidebar a:hover{background:#667eea;color:#fff;}
+.sideHustlebar{background:#fff;padding:25px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);height:fit-content;}
+.sideHustlebar h3{margin-bottom:15px;color:#667eea;}
+.sideHustlebar ul{list-style:none;}
+.sideHustlebar li{margin-bottom:10px;}
+.sideHustlebar a{display:block;padding:10px;background:#f5f7fa;border-radius:5px;text-decoration:none;color:#333;}
+.sideHustlebar a:hover{background:#667eea;color:#fff;}
 .content{background:#fff;padding:30px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
 .headline{margin-bottom:8px;color:#333;}
 .subline{color:#666;margin-bottom:20px;}
@@ -143,7 +143,7 @@ tbody tr:hover{background:#f5f7fa;}
 </head>
 <body>
 <nav class="navbar">
-    <h1>Side Hustle Platform</h1>
+    <h1>sideHustle Hustle Platform</h1>
     <div class="user-info">
         <span><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
         <a href="../controller/logout.php" class="logout-btn">Logout</a>
@@ -151,14 +151,14 @@ tbody tr:hover{background:#f5f7fa;}
 </nav>
 
 <div class="dashboard">
-    <aside class="sidebar">
+    <asideHustle class="sideHustlebar">
         <h3>Menu</h3>
         <ul>
             <li><a href="client_dashboard.php">Client Dashboard</a></li>
             <li><a href="#nearby">Nearby Professionals</a></li>
             <li><a href="#my-requests">My Requests</a></li>
         </ul>
-    </aside>
+    </asideHustle>
 
     <div class="content">
         <h2 class="headline">Welcome, <?php echo htmlspecialchars($_SESSION['user_name']); ?></h2>

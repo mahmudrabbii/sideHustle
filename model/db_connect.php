@@ -2,11 +2,13 @@
 // Database connection file
 // This file contains the database connection logic
 
+require_once __DIR__ . '/../config.php';
+
 // Database credentials
-$db_host = "localhost";
-$db_user = "root";
-$db_pass = "";
-$db_name = "sideHustle_db";
+$db_host = env('DB_HOST', 'localhost');
+$db_user = env('DB_USER', 'root');
+$db_pass = env('DB_PASS', '');
+$db_name = env('DB_NAME', 'sideHustle_db');
 
 // Create connection
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);

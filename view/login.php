@@ -88,6 +88,51 @@ redirect_if_logged_in();
         button:hover {
             transform: translateY(-2px);
         }
+
+        .oauth-divider {
+            margin: 20px 0;
+            text-align: center;
+            color: #777;
+            position: relative;
+            font-size: 13px;
+        }
+
+        .oauth-divider::before,
+        .oauth-divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .oauth-divider::before {
+            left: 0;
+        }
+
+        .oauth-divider::after {
+            right: 0;
+        }
+
+        .google-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #dadce0;
+            border-radius: 5px;
+            color: #3c4043;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            background: #fff;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .google-btn:hover {
+            background: #f8f9fa;
+            transform: translateY(-1px);
+        }
         
         .alert {
             padding: 12px;
@@ -162,12 +207,15 @@ redirect_if_logged_in();
             unset($_SESSION['register_success']);
         }
         ?>
-        
+        <!--  
+
         <div class="test-credentials">
             <strong>Test Credentials:</strong>
             <p><b>Client:</b> karim@gmail.com / password123</p>
             <p><b>Professional:</b> rahim@gmail.com / password123</p>
         </div>
+
+        -->
         
         <form action="../controller/login_process.php" method="POST">
             <div class="form-group">
@@ -182,6 +230,9 @@ redirect_if_logged_in();
             
             <button type="submit">Login</button>
         </form>
+
+        <div class="oauth-divider">or</div>
+        <a class="google-btn" href="../controller/google_login.php">Continue with Google</a>
         
         <div class="register-link">
             Don't have an account? <a href="register.php">Register here</a>
